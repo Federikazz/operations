@@ -1,78 +1,49 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 
-class Main {
-//    public interface Operation {
-//        int operation(int v1, int v2);
-//    }
+class Operations {
 
-    public interface OperationUpd {
-        int operation(int[] v1);
-
-        int getOperationType();
-
-        enum OperationType {UNARY, BINARY}
-
-        ;
-    }
-
-    static class PlusOperation implements OperationUpd {
-        @Override
-        public String toString() {
-            return "Plus Operation: ";
-        }
-
-        public int operationUpd(int[] v1) {
-            return v1[0] + v1[1];
-        }
-        return OperationUpd.OperationType.BINARY;
-    }
-
-    static class MinusOperation implements OperationUpd {
+    static class MinusOperation implements Operation {
         @Override
         public String toString() {
             return "Minus Operation: ";
         }
 
-        public int operationUpd(int[] v1) {
+        public int operation(int[] v1) {
             return v1[0] - v1[1];
         }
-        return OperationUpd.OperationType.BINARY
     }
 
-    static class MultOperation implements OperationUpd {
+    static class MultOperation implements Operation {
         @Override
         public String toString() {
             return "Multiply Operation: ";
         }
 
-        public int operationUpd(int[] v1) {
+        public int operation(int[] v1) {
             return v1[0] * v1[1];
         }
-        return OperationUpd.OperationType.BINARY
     }
 
-    static class DivOperation implements OperationUpd {
+    static class DivOperation implements Operation {
         @Override
         public String toString() {
             return "Divide Operation: ";
         }
 
-        public int operationUpd(int[] v1) {
+        public int operation(int[] v1) {
             return v1[0] / v1[1];
         }
-        return OperationUpd.OperationType.BINARY
     }
 
-    static class FactOperation implements OperationUpd {
+    static class FactOperation implements Operation {
         @Override
         public String toString() {
             return "Factorial Operation: ";
         }
 
-        public int operationUpd(int[] v1) {
+        public int operation(int[] v1) {
             int res = 1;
             for (int i = 1;
                  i <= v1;
@@ -81,7 +52,6 @@ class Main {
             }
             return res;
         }
-        return OperationUpd.OperationType.UNARY
     }
 
     public static void main(String[] args) {
@@ -97,10 +67,10 @@ class Main {
         for (Operation op : ops) {
             switch (op.getOperationType) {
                 case UNARY:
-                    public int operationUpd (int[0],int[1]);
+                    public int operation (int[0],int[1]);
                     break;
                 case BINARY:
-                    public int operationUpd (int[0]);
+                    public int operation (int[0]);
                     break;
             }
             System.out.println(op.toString() + op.operation(10, 10));
