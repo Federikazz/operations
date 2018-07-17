@@ -4,6 +4,7 @@ package Submarine;
  * Created by ivfe0316 on 12.07.2018.
  */
 public interface Submarine {
+
     int dive (int deltaDepth);
     int emmersion (int deltaDepth);
     //int move ();
@@ -12,7 +13,7 @@ public interface Submarine {
     // tAI - опрос торпедного магазина
     void torpedoAmmoInterrogate (boolean[]torpedo, boolean isLeft);
     boolean isReadyToFire ();
-    boolean fire ();
+    void fire ();
 
 
 }
