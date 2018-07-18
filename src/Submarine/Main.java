@@ -9,17 +9,8 @@ import java.lang.String;
 public class Main {
     public static void main(String[] args) {
 
-        String submarineName = "Submarine";
-        int submarineXCoordinate = 1;
-        int submarineYCoordinate = 1;
-        int depth = 0;
-        //u571.lever = Submarine.Lever.DOWN;
-        boolean[] torpedo = new boolean[]{true, true, true, true, true, false, false, false, true, false};
-        boolean isLeft = true;
-
         U534 sub534 = new U534();
-
-        sub534.torpedoAmmoInterrogate(torpedo, isLeft);
+        sub534.torpedoAmmoInterrogate(true, false   ,true);
 
 
 //        u571.controlPeriscope(Submarine.Lever.DOWN);

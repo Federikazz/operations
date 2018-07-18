@@ -11,7 +11,7 @@ public interface Submarine {
     // метод reconnaissance для U-571 поднимает перескоп, а для U-534 - радиоантенну.
     void reconnaissance ();
     // tAI - опрос торпедного магазина
-    void torpedoAmmoInterrogate (boolean[]torpedo, boolean isLeft);
+    void torpedoAmmoInterrogate (boolean torpedo, boolean isLeft, boolean mine);
     boolean isReadyToFire ();
     void fire ();
 
