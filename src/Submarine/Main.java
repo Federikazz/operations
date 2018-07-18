@@ -9,8 +9,48 @@ import java.lang.String;
 public class Main {
     public static void main(String[] args) {
 
-        U534 sub534 = new U534();
-        sub534.torpedoAmmoInterrogate(true, false   ,true);
+        U571 sub571 = new U571();
+
+        System.out.println("Выберите действие:");
+        System.out.println("Опрос аппарата - 1, enter");
+        System.out.println("Запуск торпеды - 2, enter");
+
+        Scanner interrogateScaner = new Scanner(System.in);
+        int mainDecidion = interrogateScaner.nextInt();
+        if (mainDecidion == 1) {
+            sub571.torpedoAmmoInterrogate(true, true);
+        }
+        if (mainDecidion == 2) {
+            System.out.println("Выберите номер торпеды для пуска: [1 - " + sub571.torpedoSingle.length + "]");
+            Scanner torpedoFire = new Scanner(System.in);
+            int torpedoToFireNumber = torpedoFire.nextInt();
+            sub571.fireTorpedo(torpedoToFireNumber);
+        }
+    }
+}
+
+
+
+//        sub571.torpedoAmmoInterrogate(true,true);
+//        sub571.fireTorpedo(4);
+//        sub571.fireTorpedo(12);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //        u571.controlPeriscope(Submarine.Lever.DOWN);
@@ -31,6 +71,3 @@ public class Main {
 //        u571.emersion(3);
 //        u571.controlPeriscope(Submarine.Lever.CENTER);
 //        u571.interrogatePeriscope();
-
-    }
-}

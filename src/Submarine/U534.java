@@ -2,37 +2,43 @@ package Submarine;
 
 public class U534 implements Submarine {
 
-    boolean[] torpedoleft = new boolean[] {true, true, true, true, true, false, false, false, true, false, true};
-    boolean[] torpedoright = new boolean[] {false, true, true, false, false, false, true, true, true, false,false};
-    boolean[][] mines = new boolean[][]{{true,true,true,true,true},{true,true,false,false}};
+    boolean[] torpedoleft = new boolean[]{true, true, true, true, true, false, false, false, true, false, true};
+    boolean[] torpedoright = new boolean[]{false, true, true, false, false, false, true, true, true, false, false};
+    boolean[][] mines = new boolean[][]{{true, true, true, true, true}, {true, true, false, false}};
 
 
-    public U534 () {
+    public U534() {
         String submarineName = "Submarine U-534";
         int submarineXCoordinate = 1;
         int submarineYCoordinate = 1;
         int depth = 0;
-        boolean torpedoleft[] = this.torpedoleft;
-        boolean torpedoright[] = this.torpedoright;
-        boolean mine[][] = this.mines;
     }
 
 
     @Override
-    public int dive(int deltaDepth) {return 0;}
+    public int dive(int deltaDepth) {
+        return 0;
+    }
 
     @Override
-    public int emmersion(int deltaDepth) {return 0;}
+    public int emmersion(int deltaDepth) {
+        return 0;
+    }
 
     @Override
-    public void reconnaissance() {}
+    public int move() {
+        return 0;
+    }
 
-    public void torpedoAmmoInterrogate(boolean torpedo, boolean isLeft, boolean mine) {
-        System.out.println("...Опрос вооружения...");
-        System.out.println("                      ");
-        System.out.println("Торпеды");
-        System.out.println("=======");
-        if (isLeft) {
+    @Override
+    public void reconnaissance() {
+    }
+
+    public void torpedoAmmoInterrogate(boolean torpedo, boolean mine) {
+        if (torpedo) {
+            System.out.println("...Опрос вооружения...");
+            System.out.println("Торпеды");
+            System.out.println("=======");
             System.out.println("Левая сторона:");
             System.out.println("--------------");
             for (int i = 0; i < torpedoleft.length; i++) {
@@ -42,7 +48,7 @@ public class U534 implements Submarine {
                     System.out.printf("%d отсек: пусто %n", i + 1);
                 }
             }
-        } else {
+            System.out.println("");
             System.out.println("Правая сторона:");
             System.out.println("--------------");
             for (int i = 0; i < torpedoright.length; i++) {
@@ -59,12 +65,11 @@ public class U534 implements Submarine {
             System.out.println("=======");
             for (int x = 0; x < mines.length; x++) {
                 System.out.printf("|");
-                for (int y = 0; y < mines[0].length - 1 ; y++) {
+                for (int y = 0; y < mines[0].length - 1; y++) {
 
-                    if ( mines[x][y]){
+                    if (mines[x][y]) {
                         System.out.printf("o|");
-                    }
-                else{
+                    } else {
                         System.out.printf("x|");
                     }
                 }
@@ -74,11 +79,15 @@ public class U534 implements Submarine {
     }
 
     @Override
-    public boolean isReadyToFire() {return false;}
+    public boolean isReadyToFire() {
+        return false;
+    }
 
     @Override
-    public void fire() {}
+    public void fireTorpedo(int prepTorp) {
+    }
 }
+
 
 
 

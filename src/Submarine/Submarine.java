@@ -1,21 +1,17 @@
 package Submarine;
 
-/**
- * Created by ivfe0316 on 12.07.2018.
- */
 public interface Submarine {
 
     int dive (int deltaDepth);
     int emmersion (int deltaDepth);
-    //int move ();
+    int move();
     // метод reconnaissance для U-571 поднимает перескоп, а для U-534 - радиоантенну.
     void reconnaissance ();
     // tAI - опрос торпедного магазина
-    void torpedoAmmoInterrogate (boolean torpedo, boolean isLeft, boolean mine);
+    void torpedoAmmoInterrogate (boolean torpedo, boolean mine);
     boolean isReadyToFire ();
-    void fire ();
-
-
+    void fireTorpedo (int prepTorp);
+    //void fireMine();
 }
 
 
